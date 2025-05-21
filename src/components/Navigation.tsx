@@ -15,10 +15,10 @@ const Navigation = () => {
             Home
           </NavigationMenuItem>
           <NavigationMenuItem className='nav-menu-item-hover'>
-            Work
+            Projects
           </NavigationMenuItem>
           <NavigationMenuItem className='nav-menu-item-hover'>
-            Portfolio
+            About
           </NavigationMenuItem>
           <NavigationMenuItem className='nav-menu-item-hover'>
             Contact
