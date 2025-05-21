@@ -150,5 +150,5 @@ html, body {
 }
 
 .animate-spin-once {
-  animation: spin-once 1s linear forwards;
+  animation: spin-once .25s linear forwards;
 }
