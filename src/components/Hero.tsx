@@ -15,7 +15,6 @@ const Hero = () => {
                 
 
             </section>
-            
             <div className='w-full max-w-[500px]'>
                 <AspectRatio ratio={1 / 1} className='relative border-5 border-red-700 overflow-hidden'>
                     <Image src='/images/pt-portfolio-profile.jpeg' alt='portfolio-image' fill={true} />
