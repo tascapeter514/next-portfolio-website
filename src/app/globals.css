@@ -120,3 +120,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .nav-menu-item-hover {
+    @apply hover:bg-white hover:text-black p-[.5em]
+  }
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
