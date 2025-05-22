@@ -10,8 +10,8 @@ import {
 const Navigation = () => {
 
     return(
-        <NavigationMenu className='w-full bg-black text-white '>
-        <NavigationMenuList className='flex-row gap-10 text-xl p-[1em] w-full max-w-[1200px] justify-end '>
+        <NavigationMenu className='w-full bg-black text-white flex justify-end'>
+        <NavigationMenuList className='flex-row gap-10 text-xl p-[1em] w-full justify-end pr-[2em] border-1 border-white'>
           <NavigationMenuItem className='nav-menu-item-hover'>
             <Link href='/' className='text-xl'>Home</Link>
           </NavigationMenuItem>
