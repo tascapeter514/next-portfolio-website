@@ -1,0 +1,137 @@
+"use client"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { Input } from "@/components/ui/input"
+import { Button } from "./ui/button"
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage
+} from '@/components/ui/form'
+import { Textarea } from "@/components/ui/textarea"
+import { Separator } from "@radix-ui/react-separator"
+
+
+
+const formSchema = z.object({
+    firstName: z.string().max(50),
+    lastName: z.string().max(50),
+    email: z.string().email(),
+    subject: z.string(),
+    message: z.string().min(10).max(500)
+})
+
+
+
+const ContactForm = () => {
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            subject: '',
+            message: ''
+        }
+    })
+
+    const onSubmit = (values: z.infer<typeof formSchema>) => {
+        console.log(values)
+    }
+
+    return(
+        <section className=' w-full flex flex-col justify-center items-center gap-3'>
+            <h2 className='text-[36px]'>
+                Let's talk
+                <Separator className='border-2 border-black w-full' />
+            </h2>
+            
+
+            <Form {...form} >
+                <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] p-[2em] bg-[var(--card)] items-center' >
+            
+                    <div className="flex flex-row gap-5 w-full justify-center p-[1em]">
+                        <FormField
+                            control={form.control}
+                            name='firstName'
+                            render={({ field }) => (
+                                <FormItem className='flex-1'>
+                                    <FormLabel>First Name</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder='Enter your first name' {...field} className='w-full bg-[var(--input)]'/>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                         <FormField
+                            control={form.control}
+                            name='lastName'
+                            render={({ field }) => (
+                                <FormItem className='flex-1'>
+                                    <FormLabel>Last Name</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder='Enter your last name' {...field} className='w-full h-auto bg-white'/>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                 <div className="flex flex-row gap-5 w-full justify-center p-[1em]">
+                     <FormField
+                        control={form.control}
+                        name='email'
+                        render={({ field }) => (
+                            <FormItem className='flex-1'>
+                                <FormLabel>Email Address</FormLabel>
+                                <FormControl>
+                                    <Input placeholder='Enter your email address' {...field} className='w-full bg-white'/>
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                                 />
+                                 <FormField
+                        control={form.control}
+                        name='subject'
+                        render={({ field }) => (
+                            <FormItem className='flex-1'>
+                                <FormLabel>Subject</FormLabel>
+                                <FormControl>
+                                    <Input placeholder='Enter a subject' {...field} className='w-full bg-white'/>
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                                 />
+                 </div>
+                 <FormField
+                    control={form.control}
+                    name='message'
+                    render={({ field }) => (
+                        <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
+                            <FormLabel>Message</FormLabel>
+                            <FormControl>
+                                <Textarea placeholder='Send a message' {...field} className='w-full bg-white'/>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <Button type='submit' className='rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px]'>Submit</Button>
+                </form>
+            </Form>
+        </section>
+
+    )
+
+}
+
+export default ContactForm

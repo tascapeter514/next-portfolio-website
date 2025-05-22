@@ -18,7 +18,7 @@ function NavigationMenu({
       data-slot="navigation-menu"
       data-viewport={viewport}
       className={cn(
-        "group/navigation-menu gap-3 m-auto",
+        "group/navigation-menu gap-3 mx-auto",
         className
       )}
       {...props}

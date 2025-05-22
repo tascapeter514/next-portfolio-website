@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Separator } from "@/components/ui/separator"
 
 
 type Icon = {src: string, label: string}
@@ -27,14 +28,19 @@ const icons = [
 const DevIconGrid = () => {
 
     return(
-        <section aria-label='dev-icon-grid' className='border-5 border-red flex flex-col text-center w-full max-w-[1200px] m-auto h-fill'>
-            <h1 className='text-[40px]'>Tech Stack and Skills</h1>
-            <ul className='w-full grid [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[1em]'>
-                {icons.map((icon: Icon) => (
-                    <li key={icon.label} className=' aspect-square  h-[100px] flex flex-col items-center'><Image src={icon.src} width={100} height={100} layout='responsive' alt='javascript-icon'/><span>{icon.label}</span></li>
-                    
-                ))}
-            </ul>
+        <section aria-label='dev-icon-grid' className='bg-[var(--secondary)] w-full'>
+            <article className=' flex flex-col w-full max-w-[1200px] m-auto h-fill items-center'>
+                <h1 className='text-[40px] max-w-[fit-content]'>
+                    Technologies
+                    <Separator className='border-1 border-black-300'/>
+                </h1>
+                <ul className='w-full grid [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[2em]'>
+                    {icons.map((icon: Icon) => (
+                        <li key={icon.label} className=' aspect-square  h-[100px] flex flex-col items-center'><Image src={icon.src} width={100} height={100} layout='responsive' alt='javascript-icon'/><span>{icon.label}</span></li>
+                
+                    ))}
+                </ul>
+            </article>
 
         </section>
     )

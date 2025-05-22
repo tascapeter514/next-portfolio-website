@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
 
-    <main>
+    <main className='flex flex-col gap-10 padding-3 w-full '>
       <Hero />
       <DevIconGrid />
 
