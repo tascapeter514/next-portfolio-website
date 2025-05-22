@@ -130,13 +130,20 @@ html, body {
   padding: 0;
 }
 
-@tailwind base;
-@tailwind components;
+/* @tailwind base;
+@tailwind components; */
 @tailwind utilities;
 @layer components {
   .nav-menu-item-hover {
     @apply hover:bg-white hover:text-black p-[.5em]
   }
+}
+
+.nav-menu-item-hover:hover {
+  background: white;
+  color: black;
+  padding: .5em
+
 }
 
 

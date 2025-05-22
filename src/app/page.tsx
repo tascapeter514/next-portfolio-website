@@ -28,7 +28,7 @@ const HomePage = () => {
 
   return (
 
-    <main>
+    <main className=''>
       <Navigation />
       <Hero />
       <DevIconGrid />
