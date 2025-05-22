@@ -1,4 +1,3 @@
-import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import DevIconGrid from '@/components/DevIconGrid'
 import path from 'path';

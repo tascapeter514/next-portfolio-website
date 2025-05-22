@@ -9,7 +9,7 @@ export default function ProjectsLayout({
 }>) {
   return (
 
-        <main>{children}</main>
+        <main className='bg-[var(--background)]'>{children}</main>
  
   );
 }

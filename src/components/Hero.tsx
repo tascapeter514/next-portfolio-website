@@ -8,7 +8,7 @@ import Image from 'next/image'
 const Hero = () => {
 
     return(
-        <section className='border-5 border-red flex w-full max-w-[1200px] m-auto justify-between p-[2em]' aria-label='hero'>
+        <section className='border-5 border-red flex w-full max-w-[1200px] m-auto justify-between p-[2em] bg-[var(--card)]' aria-label='hero'>
             <article aria-label='headline' className='border-2 border-red flex flex-col gap-5 items-center justify-center p-1 text-[40px] text-center'>
                 <h1>Hi, I'm Pete - a <strong>Javascript</strong> and <strong>Python</strong> fullstack developer.</h1>
                 <ButtonWithIcon />

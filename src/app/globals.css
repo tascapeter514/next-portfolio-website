@@ -43,7 +43,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
+/* :root {
   --radius: 0.625rem;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -76,9 +76,11 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-}
+} */
 
-.dark {
+
+
+/* .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -110,17 +112,62 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
-
-/* @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 } */
 
+
+:root {
+  --background: #fff7e6;
+  --foreground: #020817;
+  --card: #f8eccd;
+  --card-foreground: #020817;
+  --primary: #645331;
+  --primary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #ded5b6;
+  --accent-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #020817;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #020817;
+  --chart-1: #e76e50;
+  --chart-2: #2a9d90;
+  --chart-3: #274754;
+  --chart-4: #e8c468;
+  --chart-5: #f4a462;
+  }
+
+  /* .dark{
+  --background: rgb(255, 247, 230);
+  --foreground: rgb(2, 8, 23);
+  --card: rgb(248, 236, 205);
+  --card-foreground: rgb(2, 8, 23);
+  --primary: rgb(100, 83, 49);
+  --primary-foreground: rgb(248, 250, 252);
+  --secondary: rgb(241, 245, 249);
+  --secondary-foreground: rgb(15, 23, 42);
+  --muted: rgb(241, 245, 249);
+  --muted-foreground: rgb(100, 116, 139);
+  --accent: rgb(222, 213, 182);
+  --accent-foreground: rgb(15, 23, 42);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(2, 8, 23);
+  --destructive: rgb(239, 68, 68);
+  --destructive-foreground: rgb(248, 250, 252);
+  --border: rgb(226, 232, 240);
+  --input: rgb(226, 232, 240);
+  --ring: rgb(2, 8, 23);
+  --chart-1: rgb(231, 110, 80);
+  --chart-2: rgb(42, 157, 144);
+  --chart-3: rgb(39, 71, 84);
+  --chart-4: rgb(232, 196, 104);
+  --chart-5: rgb(244, 164, 98);
+  } */
 
 
 html, body {
