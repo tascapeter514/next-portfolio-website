@@ -15,21 +15,10 @@ export type Icon = {
 
 const HomePage = () => {
 
-  // const dir = path.join(process.cwd(), 'public/dev-icons');
-  // const files = fs.readdirSync(dir);
-  // const icons = files.map((file) => ({
-  //   src: `/dev-icons/${file}`,
-  //   label: capitalizeFirstLetter(path.parse(file).name)
-  // }))
-
-  // console.log('icons:', icons)
-
-
 
   return (
 
-    <main className=''>
-      <Navigation />
+    <main>
       <Hero />
       <DevIconGrid />
 
