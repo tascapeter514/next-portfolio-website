@@ -1,7 +1,5 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import ButtonWithIcon from "./ButtonWithIcon"
-
-
 import Image from 'next/image'
 
 

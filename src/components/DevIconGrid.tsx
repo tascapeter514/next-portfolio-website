@@ -1,28 +1,10 @@
 import Image from "next/image"
+import { devIcons } from "public/data/client-data"
+import { DevIcon } from "@/lib/types"
 import { Separator } from "@/components/ui/separator"
 
 
-type DevIcon = {src: string, label: string}
 
-const devIcons = [
-    {src: '/dev-icons/javascript.svg', label: 'Javascript'},
-    {src: '/dev-icons/typescript.svg', label: 'Typescript'},
-    {src: '/dev-icons/react.svg', label: 'React'},
-    {src: '/dev-icons/python.svg', label: 'Python'},
-    {src: '/dev-icons/django.svg', label: 'Django'},
-    {src: '/dev-icons/nextjs.svg', label: 'Next.js'},
-    {src: '/dev-icons/tailwindcss.svg', label: 'Tailwind CSS'},
-    {src: '/dev-icons/express.svg', label: 'Express'},
-    {src: '/dev-icons/nodejs.svg', label: 'Node.js'},
-    {src: '/dev-icons/vue.svg', label: 'Vue'},
-    {src: '/dev-icons/git.svg', label: 'Git'},
-    {src: '/dev-icons/heroku.svg', label: 'Heroku'},
-    {src: '/dev-icons/docker.svg', label: 'Docker'},
-    {src: '/dev-icons/postgresql.svg', label: 'PostgreSQL'},
-    {src: '/dev-icons/sqlite.svg', label: 'SQLite'},
-    {src: '/dev-icons/css.svg', label: 'CSS'},
-    {src: '/dev-icons/html5.svg', label: 'HTML5'},
-]
 
 
 const DevIconGrid = () => {
