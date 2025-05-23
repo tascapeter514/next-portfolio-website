@@ -51,8 +51,6 @@ const ContactForm = () => {
                 Let's talk
                 <Separator className='border-2 border-black w-full' />
             </h2>
-            
-
             <Form {...form} >
                 <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] p-[2em] bg-[var(--card)] items-center' >
             
@@ -64,7 +62,7 @@ const ContactForm = () => {
                                 <FormItem className='flex-1'>
                                     <FormLabel>First Name</FormLabel>
                                     <FormControl>
-                                        <Input placeholder='Enter your first name' {...field} className='w-full bg-[var(--input)]'/>
+                                        <Input placeholder='Enter your first name' {...field} className='w-full bg-white'/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

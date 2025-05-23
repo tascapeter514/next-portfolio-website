@@ -2,9 +2,9 @@ import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 
 
-type Icon = {src: string, label: string}
+type DevIcon = {src: string, label: string}
 
-const icons = [
+const devIcons = [
     {src: '/dev-icons/javascript.svg', label: 'Javascript'},
     {src: '/dev-icons/typescript.svg', label: 'Typescript'},
     {src: '/dev-icons/react.svg', label: 'React'},
@@ -35,7 +35,7 @@ const DevIconGrid = () => {
                     <Separator className='border-1 border-black-300'/>
                 </h1>
                 <ul className='w-full grid [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[2em]'>
-                    {icons.map((icon: Icon) => (
+                    {devIcons.map((icon: DevIcon) => (
                         <li key={icon.label} className=' aspect-square  h-[100px] flex flex-col items-center'><Image src={icon.src} width={100} height={100} layout='responsive' alt='javascript-icon'/><span>{icon.label}</span></li>
                 
                     ))}
