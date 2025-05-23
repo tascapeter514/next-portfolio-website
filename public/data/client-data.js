@@ -45,21 +45,21 @@ export const projects = [
 
 // ABOUT DATA
 
-const accordionContents = [
+export const accordionContents = [
     {
         label: 'Frontend',
-        src: 'public/about-icons/code-solid.svg',
+        src: '/about-icons/code-solid.svg',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
     
     },
     {
         label: 'Backend',
-        src: 'public/about-icons/microchip-solid.svg',
+        src: '/about-icons/microchip-solid.svg',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
     },
     {
         label: 'Data Analytics',
-        src: 'public/about-icons/database-solid.svg',
+        src: '/about-icons/database-solid.svg',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
 
     }

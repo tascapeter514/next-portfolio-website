@@ -14,7 +14,7 @@ export type Project = {
 // ABOUT PAGE
 export type AccordionInfo = {
     label: string,
-    iconSrc: string,
+    src: string,
     text: string
 }
 
