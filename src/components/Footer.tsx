@@ -17,7 +17,7 @@ const Footer = () => {
                     </li>
                 ))}
             </ul>
-            <small>Copyright @2025 Peter Tasca All Rights Reserved</small>
+            <small className='border-1 border-black-300 max-sm:text-center'>Copyright @2025 Peter Tasca All Rights Reserved</small>
         </footer>
     )
 }

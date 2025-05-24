@@ -19,7 +19,7 @@ import { BracketsIcon } from "@/icons/about-icons/react-icons"
 const About = () => {
     return(
         //About Section
-        <section className='w-full max-w-[1200px]'>
+        <section className='w-full max-w-[1200px] p-[1em]'>
             <h2 className='text-6xl font-bold text-black p-[.25em] '>About Me</h2>
             {/* Content Container */}
             <div className='flex flex-col gap-2 md:flex-row w-full'>
@@ -46,10 +46,10 @@ const About = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, deleniti? Quaerat, quae deleniti tenetur voluptatum vel rerum maiores doloremque error voluptas asperiores, nam adipisci assumenda rem provident ut quia! Praesentium!</p>
                 </article>
                 {/* Image Container */}
-                <article className='w-full h-auto max-w-[500px]'>
-                    <AspectRatio ratio={7 / 8} className='relative overflow-hidden'>
+                <article className='w-full h-fit max-w-[500px] border-1 border-black-300 max-md:mx-auto'>
+                    <div className='relative overflow-hidden aspect-square'>
                         <Image src='/images/pt-portfolio-profile.jpeg' fill alt='about-me-pic' />
-                    </AspectRatio>
+                    </div>
                 </article>
             </div>
         </section>
