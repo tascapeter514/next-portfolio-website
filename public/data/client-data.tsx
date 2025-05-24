@@ -1,4 +1,4 @@
-
+import { BracketsIcon, DatabaseIcon, MicrochipIcon } from "@/icons/about-icons/react-icons"
 
 // HOMEPAGE DATA
 
@@ -45,21 +45,24 @@ export const projects = [
 
 // ABOUT DATA
 
-export const accordionContents = [
+export const cards = [
     {
         label: 'Frontend',
-        src: '/about-icons/code-solid.svg',
+        // src: '/about-icons/code-solid.svg',
+        Icon: BracketsIcon,
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
     
     },
     {
         label: 'Backend',
-        src: '/about-icons/microchip-solid.svg',
+        Icon: MicrochipIcon,
+        // src: '/about-icons/microchip-solid.svg',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
     },
     {
         label: 'Data Analytics',
-        src: '/about-icons/database-solid.svg',
+        Icon: DatabaseIcon,
+        // src: '/about-icons/database-solid.svg',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
 
     }

@@ -1,6 +1,6 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio"
-import { accordionContents } from "public/data/client-data"
-import { AccordionInfo } from "@/lib/types"
+import { cards } from "public/data/client-data"
+import { Card } from "@/lib/types"
 import Image from "next/image"
 import {
     Accordion,
@@ -9,14 +9,18 @@ import {
     AccordionTrigger
 } from '@/components/ui/accordion'
 
+import { BracketsIcon } from "@/icons/about-icons/react-icons"
+
+
 
 
 
 
 const About = () => {
     return(
-        //About Sectio
+        //About Section
         <section className='border-1 border-black-700'>
+            <BracketsIcon className='stroke-1 stroke-red-300'/>
             <h2 className='text-6xl font-bold text-black p-[.25em]'>About Me</h2>
             {/* Content Container */}
             <div className='flex flex-col gap-7 md:flex-row border-3 border-red-900'>
@@ -24,16 +28,17 @@ const About = () => {
                 <article className='flex flex-col max-w-5xl p-[1em]'>
                     {/* Upper Text */}
                     <p className='text-lg font-medium'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique pariatur deserunt praesentium, odio expedita dolorem atque numquam facere dolores voluptatem hic incidunt, porro cum ea repellendus adipisci natus non voluptatum!</p>
-                    {/* Accordion Container */}
+                    {/* Card Container */}
                     <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-8 w-full md:max-w-3xl gap-4'>
-                        {accordionContents.map((accordion: AccordionInfo) => (
-                            <li key={accordion.label} className='bg-[var(--card)]'>
+                        {cards.map((card: Card) => (
+                            <li key={card.label} className='bg-[var(--card)]'>
                                 <div className='p-4 rounded-lg border-1 border-[var(--border)] sm:max-w-[250px] md:max-w-[280px]'>
                                     <div className='flex items-center gap-2 mb-3'>
-                                        <Image src={accordion.src} alt={`${accordion.label}-icon`} width={25} height={25} className='bg-orange'/>
-                                        <h3 className='text-[var(--foreground)]'>{accordion.label}</h3>
+                                        {/* <Image src={card.src} alt={`${card.label}-icon`} width={25} height={25} className='stroke-1 stroke-orange-100'/> */}
+                                        <card.Icon className='w-25 h-25 stroke-1 stroke-orange-100' />
+                                        <h3 className='text-[var(--foreground)]'>{card.label}</h3>
                                     </div>
-                                    <p>{accordion.text}</p>
+                                    <p>{card.text}</p>
                                 </div>
                                 
                             </li>

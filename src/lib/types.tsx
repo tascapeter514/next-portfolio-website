@@ -12,9 +12,9 @@ export type Project = {
 }
 
 // ABOUT PAGE
-export type AccordionInfo = {
+export type Card = {
     label: string,
-    src: string,
+    Icon: React.ElementType,
     text: string
 }
 
