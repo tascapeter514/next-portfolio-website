@@ -19,26 +19,24 @@ import { BracketsIcon } from "@/icons/about-icons/react-icons"
 const About = () => {
     return(
         //About Section
-        <section className='border-1 border-black-700'>
-            <BracketsIcon className='stroke-1 stroke-red-300'/>
-            <h2 className='text-6xl font-bold text-black p-[.25em]'>About Me</h2>
+        <section className='w-full max-w-[1200px]'>
+            <h2 className='text-6xl font-bold text-black p-[.25em] '>About Me</h2>
             {/* Content Container */}
-            <div className='flex flex-col gap-7 md:flex-row border-3 border-red-900'>
-                {/* Text and accordion article */}
-                <article className='flex flex-col max-w-5xl p-[1em]'>
+            <div className='flex flex-col gap-2 md:flex-row w-full'>
+                {/* Text and card article */}
+                <article className='flex flex-col max-w-5xl p-[1em] gap-5'>
                     {/* Upper Text */}
                     <p className='text-lg font-medium'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique pariatur deserunt praesentium, odio expedita dolorem atque numquam facere dolores voluptatem hic incidunt, porro cum ea repellendus adipisci natus non voluptatum!</p>
                     {/* Card Container */}
-                    <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-8 w-full md:max-w-3xl gap-4'>
+                    <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:max-w-3xl gap-4'>
                         {cards.map((card: Card) => (
                             <li key={card.label} className='bg-[var(--card)]'>
-                                <div className='p-4 rounded-lg border-1 border-[var(--border)] sm:max-w-[250px] md:max-w-[280px]'>
-                                    <div className='flex items-center gap-2 mb-3'>
-                                        {/* <Image src={card.src} alt={`${card.label}-icon`} width={25} height={25} className='stroke-1 stroke-orange-100'/> */}
-                                        <card.Icon className='w-25 h-25 stroke-1 stroke-orange-100' />
+                                <div className='p-4 rounded-lg  sm:max-w-[250px] md:max-w-[280px]'>
+                                    <div className='flex items-center justify-left gap-2 mb-3'>
+                                        <card.Icon className='w-7 h-7 text-[var(--chart-5)]' />
                                         <h3 className='text-[var(--foreground)]'>{card.label}</h3>
                                     </div>
-                                    <p>{card.text}</p>
+                                    <p className='text-sm font-normal text-[var(--muted-foreground)]'>{card.text}</p>
                                 </div>
                                 
                             </li>
@@ -48,8 +46,8 @@ const About = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, deleniti? Quaerat, quae deleniti tenetur voluptatum vel rerum maiores doloremque error voluptas asperiores, nam adipisci assumenda rem provident ut quia! Praesentium!</p>
                 </article>
                 {/* Image Container */}
-                <article className='border-3 border-black-900 w-full max-w-[500px]'>
-                    <AspectRatio ratio={1 / 1} className='relative overflow-hidden'>
+                <article className='w-full h-auto max-w-[500px]'>
+                    <AspectRatio ratio={7 / 8} className='relative overflow-hidden'>
                         <Image src='/images/pt-portfolio-profile.jpeg' fill alt='about-me-pic' />
                     </AspectRatio>
                 </article>

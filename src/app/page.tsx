@@ -5,13 +5,6 @@ import { capitalizeFirstLetter } from '@/utils/functions';
 import fs from 'fs'
 
 
-export type Icon = {
-    src: string,
-    label: string
-}
-
-
-
 const HomePage = () => {
 
 
@@ -20,7 +13,6 @@ const HomePage = () => {
     <main className='flex flex-col gap-10 padding-3 w-full '>
       <Hero />
       <DevIconGrid />
-
     </main>
       
   )

@@ -1,4 +1,6 @@
-import { FaCode, FaMicrochip, FaDatabase } from "react-icons/fa";
+import { FaCode,  FaDatabase } from "react-icons/fa";
+import { FaMicrochip } from "react-icons/fa6";
+
 
 
 

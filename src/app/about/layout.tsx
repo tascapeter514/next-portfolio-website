@@ -9,7 +9,7 @@ export default function AboutLayout({
 }>) {
   return (
 
-        <main>{children}</main>
+        <main className='w-full flex justify-center'>{children}</main>
  
   );
 }
