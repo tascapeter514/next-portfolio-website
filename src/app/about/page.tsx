@@ -57,15 +57,3 @@ const About = () => {
 }
 
 export default About
-
-{/* <Accordion type='single' collapsible>
-                                    <AccordionItem value={accordion.label} className=''>
-                                        <AccordionTrigger className='flex items-center gap-2 mb-3 w-full justify-center'>
-                                            <Image className='px-[.25em]'src={accordion.src} alt={`${accordion.label}-icon`} width={25} height={25}/>
-                                            {accordion.label}
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            {accordion.text}
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion> */}

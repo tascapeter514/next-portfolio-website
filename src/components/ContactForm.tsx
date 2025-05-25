@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
 import { useRef } from 'react'
-import useIsVisible from "@/app/hooks/useIsVisible"
+import useIsVisible from "@/hooks/useIsVisible"
 import { z } from 'zod'
 import { Input } from "@/components/ui/input"
 import { Button } from "./ui/button"
