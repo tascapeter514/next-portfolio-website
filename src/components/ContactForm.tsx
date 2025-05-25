@@ -1,6 +1,8 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
+import { useRef } from 'react'
+import useIsVisible from "@/app/hooks/useIsVisible"
 import { z } from 'zod'
 import { Input } from "@/components/ui/input"
 import { Button } from "./ui/button"
@@ -30,6 +32,9 @@ const formSchema = z.object({
 
 const ContactForm = () => {
 
+    const formRef = useRef<HTMLFormElement>(null)
+    const isVisible = useIsVisible(formRef);
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -46,7 +51,7 @@ const ContactForm = () => {
     }
 
     return(
-        <section className=' w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em]'>
+        <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
             <h2 className='text-[36px]'>
                 Let's talk
             </h2>
