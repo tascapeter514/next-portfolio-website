@@ -20,34 +20,34 @@ const About = () => {
     return(
         //About Section
         <section className='w-full max-w-[1200px] p-[1em]'>
-            <h2 className='text-6xl font-bold text-black p-[.25em] '>About Me</h2>
+            <h2 className='text-6xl text-black p-[.25em] lineUp'>About Me</h2>
             {/* Content Container */}
             <div className='flex flex-col gap-2 md:flex-row w-full'>
                 {/* Text and card article */}
                 <article className='flex flex-col max-w-5xl p-[1em] gap-5'>
                     {/* Upper Text */}
-                    <p className='text-lg font-medium'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique pariatur deserunt praesentium, odio expedita dolorem atque numquam facere dolores voluptatem hic incidunt, porro cum ea repellendus adipisci natus non voluptatum!</p>
+                    <p className='text-lg font-medium lineUp'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique pariatur deserunt praesentium, odio expedita dolorem atque numquam facere dolores voluptatem hic incidunt, porro cum ea repellendus adipisci natus non voluptatum!</p>
                     {/* Card Container */}
                     <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:max-w-3xl gap-4'>
                         {cards.map((card: Card) => (
-                            <li key={card.label} className='bg-[var(--card)]'>
+                            <li key={card.label} className='bg-[var(--card)] flip'>
                                 <div className='p-4 rounded-lg  sm:max-w-[250px] md:max-w-[280px]'>
                                     <div className='flex items-center justify-left gap-2 mb-3'>
                                         <card.Icon className='w-7 h-7 text-[var(--chart-5)]' />
                                         <h3 className='text-[var(--foreground)]'>{card.label}</h3>
                                     </div>
-                                    <p className='text-sm font-normal text-[var(--muted-foreground)]'>{card.text}</p>
+                                    <p className='text-sm font-normal text-[var(--muted-foreground)] lineUP'>{card.text}</p>
                                 </div>
                                 
                             </li>
                         ))}
                     </ul>
                     {/* Lower Text */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, deleniti? Quaerat, quae deleniti tenetur voluptatum vel rerum maiores doloremque error voluptas asperiores, nam adipisci assumenda rem provident ut quia! Praesentium!</p>
+                    <p className='lineUp'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, deleniti? Quaerat, quae deleniti tenetur voluptatum vel rerum maiores doloremque error voluptas asperiores, nam adipisci assumenda rem provident ut quia! Praesentium!</p>
                 </article>
                 {/* Image Container */}
                 <article className='w-full h-fit max-w-[500px] border-1 border-black-300 max-md:mx-auto'>
-                    <div className='relative overflow-hidden aspect-square'>
+                    <div className='relative overflow-hidden aspect-square flip'>
                         <Image src='/images/pt-portfolio-profile.jpeg' fill alt='about-me-pic' />
                     </div>
                 </article>
