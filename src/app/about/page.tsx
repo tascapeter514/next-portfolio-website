@@ -30,7 +30,7 @@ const About = () => {
                     {/* Card Container */}
                     <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:max-w-3xl gap-4'>
                         {cards.map((card: Card) => (
-                            <li key={card.label} className='bg-[var(--card)] flip'>
+                            <li key={card.label} className='bg-[var(--card)] flipIn'>
                                 <div className='p-4 rounded-lg  sm:max-w-[250px] md:max-w-[280px]'>
                                     <div className='flex items-center justify-left gap-2 mb-3'>
                                         <card.Icon className='w-7 h-7 text-[var(--chart-5)]' />
@@ -47,7 +47,7 @@ const About = () => {
                 </article>
                 {/* Image Container */}
                 <article className='w-full h-fit max-w-[500px] border-1 border-black-300 max-md:mx-auto'>
-                    <div className='relative overflow-hidden aspect-square flip'>
+                    <div className='relative overflow-hidden aspect-square flipIn'>
                         <Image src='/images/pt-portfolio-profile.jpeg' fill alt='about-me-pic' />
                     </div>
                 </article>

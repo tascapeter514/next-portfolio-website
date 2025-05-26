@@ -34,7 +34,7 @@ const Navigation = () => {
           </NavigationMenuList>
             <OpenMobileNav mobileNav={mobileNav} navDispatch={dispatchNav}><HamburgerIcon/></OpenMobileNav>
             <CloseMobileNav mobileNav={mobileNav} navDispatch={dispatchNav}><CloseHamburgerIcon /></CloseMobileNav>
-            <aside className={`flip ${mobileNav.open ? 'absolute right-[30px] top-[80px] w-full max-w-[200px] z-9999 h-fit bg-[var(--card)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : 'hidden'}`}>
+            <aside className={` ${mobileNav.open && !mobileNav.isExiting ? 'flipIn absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : `${mobileNav.isExiting && mobileNav.open ? 'flipOut absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : 'hidden'}`}`}>
                 <ul className='p-[5%] flex flex-col gap-[1.25rem] items-center' onClick={() => mobileNav.open = false}>
                     <li className='text-bold text-black'><Link href='/'>Home</Link></li>
                     <li className='text-bold text-black'><Link href='/projects'>Projects</Link></li>
