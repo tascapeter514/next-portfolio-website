@@ -9,7 +9,11 @@ describe('template spec', () => {
 
   //  cy.getByData("contact-form").scrollIntoView()
 
-    cy.getByData("first-name-field").type('John Doe')
+    cy.getByData("first-name-field").type('John')
+    cy.getByData("last-name-field").type('Doe')
+    // cy.getByData("email")
+    // cy.getByData("email")
+    // cy.getByData("email")
     // cy.get(`[data-test=first-name-field]`)
 
     // cy.getByData('test-input')

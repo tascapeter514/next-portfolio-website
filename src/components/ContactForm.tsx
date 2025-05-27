@@ -72,14 +72,13 @@ const ContactForm = () => {
                             )}
                         />
                         <FormField
-                            data-test='last-name-field'
                             control={form.control}
                             name='lastName'
                             render={({ field }) => (
                                 <FormItem className='flex-1'>
                                     <FormLabel>Last Name</FormLabel>
                                     <FormControl>
-                                        <Input placeholder='Enter your last name' {...field} className='w-full h-auto bg-white'/>
+                                        <Input data-test='last-name-field' placeholder='Enter your last name' {...field} className='w-full h-auto bg-white'/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -88,14 +87,13 @@ const ContactForm = () => {
                     </div>
                  <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:max-w-[500px] max-sm:p-[.5em]">
                      <FormField
-                        data-test='email-field'
                         control={form.control}
                         name='email'
                         render={({ field }) => (
                             <FormItem className='flex-1'>
                                 <FormLabel>Email Address</FormLabel>
                                 <FormControl>
-                                    <Input placeholder='Enter your email address' {...field} className='w-full bg-white'/>
+                                    <Input data-test='email-field' placeholder='Enter your email address' {...field} className='w-full bg-white'/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -109,7 +107,7 @@ const ContactForm = () => {
                                 <FormItem className='flex-1'>
                                     <FormLabel>Subject</FormLabel>
                                     <FormControl>
-                                        <Input placeholder='Enter a subject' {...field} className='w-full bg-white'/>
+                                        <Input data-test='subject-field' placeholder='Enter a subject' {...field} className='w-full bg-white'/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -124,7 +122,7 @@ const ContactForm = () => {
                         <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <Textarea placeholder='Send a message' {...field} className='w-full bg-white'/>
+                                <Textarea data-test='message-field' placeholder='Send a message' {...field} className='w-full bg-white'/>
                             </FormControl>
                             <FormMessage />
                         </FormItem>
