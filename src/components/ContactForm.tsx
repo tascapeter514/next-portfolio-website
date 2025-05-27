@@ -55,23 +55,24 @@ const ContactForm = () => {
                 Let&apos;s talk
             </h2>
             <Form {...form} >
-                <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
-            
+                <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
                     <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:p-[.5em]">
                         <FormField
+                            
                             control={form.control}
                             name='firstName'
                             render={({ field }) => (
                                 <FormItem className='flex-1'>
                                     <FormLabel >First Name</FormLabel>
                                     <FormControl>
-                                        <Input placeholder='Enter your first name' {...field} className='w-full bg-white'/>
+                                        <Input data-test='first-name-field' placeholder='Enter your first name' {...field} className='w-full bg-white'/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
-                         <FormField
+                        <FormField
+                            data-test='last-name-field'
                             control={form.control}
                             name='lastName'
                             render={({ field }) => (
@@ -87,6 +88,7 @@ const ContactForm = () => {
                     </div>
                  <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:max-w-[500px] max-sm:p-[.5em]">
                      <FormField
+                        data-test='email-field'
                         control={form.control}
                         name='email'
                         render={({ field }) => (
@@ -99,22 +101,24 @@ const ContactForm = () => {
                             </FormItem>
                         )}
                                  />
-                                 <FormField
-                        control={form.control}
-                        name='subject'
-                        render={({ field }) => (
-                            <FormItem className='flex-1'>
-                                <FormLabel>Subject</FormLabel>
-                                <FormControl>
-                                    <Input placeholder='Enter a subject' {...field} className='w-full bg-white'/>
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                                 />
+                        <FormField
+                            data-test='subject-field'
+                            control={form.control}
+                            name='subject'
+                            render={({ field }) => (
+                                <FormItem className='flex-1'>
+                                    <FormLabel>Subject</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder='Enter a subject' {...field} className='w-full bg-white'/>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                  </div>
-                 <FormField
+                <FormField
                     control={form.control}
+                    data-test='message-field'
                     name='message'
                     render={({ field }) => (
                         <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
@@ -126,7 +130,7 @@ const ContactForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button type='submit' className='rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
+                <Button data-test='contact-button' type='submit' className='rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
                 </form>
             </Form>
         </section>
