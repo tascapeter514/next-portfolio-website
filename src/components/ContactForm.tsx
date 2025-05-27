@@ -49,16 +49,16 @@ const ContactForm = () => {
     const [state, handleSubmit] = useFormSpree("movdgely")
     // const [state, handleSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORM)
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values)
-        const formData = new FormData()
+    // const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    //     console.log(values)
+    //     const formData = new FormData()
 
-        Object.entries(values).forEach(([key, value]) => {
-            formData.append(key,value)
-        })
+    //     Object.entries(values).forEach(([key, value]) => {
+    //         formData.append(key,value)
+    //     })
 
         
-    }
+    // }
 
     if (state.succeeded) {
         return <p>Thanks for your submission. Pete will get back to you as soon as possible</p>
