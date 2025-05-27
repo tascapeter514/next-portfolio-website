@@ -57,7 +57,7 @@ const ContactForm = () => {
             formData.append(key,value)
         })
 
-        handleSubmit(formData)
+        
     }
 
     if (state.succeeded) {
@@ -70,7 +70,7 @@ const ContactForm = () => {
                 Let&apos;s talk
             </h2>
             <Form {...form} >
-                <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
+                <form data-test='contact-form' onSubmit={handleSubmit} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
                     <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:p-[.5em]">
                         <FormField
                             control={form.control}
@@ -140,7 +140,7 @@ const ContactForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button data-test='contact-button' type='submit' className='rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
+                <Button data-test='contact-button' type='submit' className='cursor-pointer rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
                 <ValidationError errors={state.errors} />
                 </form>
             </Form>
