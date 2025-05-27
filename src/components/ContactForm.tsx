@@ -58,7 +58,6 @@ const ContactForm = () => {
                 <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
                     <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:p-[.5em]">
                         <FormField
-                            
                             control={form.control}
                             name='firstName'
                             render={({ field }) => (
@@ -100,7 +99,6 @@ const ContactForm = () => {
                         )}
                                  />
                         <FormField
-                            data-test='subject-field'
                             control={form.control}
                             name='subject'
                             render={({ field }) => (
@@ -116,7 +114,6 @@ const ContactForm = () => {
                  </div>
                 <FormField
                     control={form.control}
-                    data-test='message-field'
                     name='message'
                     render={({ field }) => (
                         <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
