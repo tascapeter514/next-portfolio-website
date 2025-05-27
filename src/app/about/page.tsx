@@ -1,26 +1,13 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { cards } from "public/data/client-data"
 import { Card } from "@/lib/types"
 import Image from "next/image"
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger
-} from '@/components/ui/accordion'
-
-import { BracketsIcon } from "@/icons/about-icons/react-icons"
-
-
-
-
 
 
 const About = () => {
     return(
         //About Section
         <section className='w-full max-w-[1200px] p-[1em]'>
-            <h2 className='text-6xl text-black p-[.25em] lineUp'>About Me</h2>
+            <h1 className='text-6xl text-black p-[.25em] lineUp'>About Me</h1>
             {/* Content Container */}
             <div className='flex flex-col gap-2 md:flex-row w-full'>
                 {/* Text and card article */}
@@ -34,9 +21,9 @@ const About = () => {
                                 <div className='p-4 rounded-lg  sm:max-w-[250px] md:max-w-[280px]'>
                                     <div className='flex items-center justify-left gap-2 mb-3'>
                                         <card.Icon className='w-7 h-7 text-[var(--chart-5)]' />
-                                        <h3 className='text-[var(--foreground)]'>{card.label}</h3>
+                                        <h2 className='text-[var(--foreground)]'>{card.label}</h2>
                                     </div>
-                                    <p className='text-sm font-normal text-[var(--muted-foreground)] lineUP'>{card.text}</p>
+                                    <p className='text-sm font-normal text-[var(--card-foreground)] lineUp'>{card.text}</p>
                                 </div>
                                 
                             </li>

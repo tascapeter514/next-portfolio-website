@@ -9,14 +9,13 @@ import { Button } from "./ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
+    // FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage
 } from '@/components/ui/form'
 import { Textarea } from "@/components/ui/textarea"
-import { Separator } from "@radix-ui/react-separator"
 
 
 
@@ -64,7 +63,7 @@ const ContactForm = () => {
                             name='firstName'
                             render={({ field }) => (
                                 <FormItem className='flex-1'>
-                                    <FormLabel>First Name</FormLabel>
+                                    <FormLabel >First Name</FormLabel>
                                     <FormControl>
                                         <Input placeholder='Enter your first name' {...field} className='w-full bg-white'/>
                                     </FormControl>

@@ -184,10 +184,12 @@ html, body {
 }
 
 .lineUp {
-  animation: anim-lineUp 2s ease-in
+  will-change: opacity, transform;
+  animation: anim-lineUp .5s ease-in
 }
 
 .scroll-lineUp {
+  will-change: opacity, transform;
   animation: anim-lineUp 1s ease-in;
 }
 
@@ -210,11 +212,20 @@ html, body {
     opacity: 1;
     transform: translateY(0%)
   }
+
+  /* from {
+    transform: scaleX(0)
+  }
+
+  to {
+    transform: scaleX(1)
+  } */
 }
 
 
 
 .flipIn {
+  will-change: opacity, transform;
   animation: anim-flipIn 0.5s ease-in;
 }
 
@@ -227,16 +238,10 @@ html, body {
   }
 }
 
-@keyframes spin-once {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 .flipOut {
+  will-change: opacity, transform;
   animation: anim-flipOut 0.5s ease-out forwards
 }
 
@@ -252,5 +257,15 @@ html, body {
 }
 
 .animate-spin-once {
+
   animation: spin-once .25s linear forwards;
+}
+
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

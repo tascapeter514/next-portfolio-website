@@ -15,6 +15,6 @@ export const DatabaseIcon = (props: IconProps) => <FaDatabase {...props}/>
 
 export const MicrochipIcon = (props: IconProps) => <FaMicrochip {...props} />
 
-export const HamburgerIcon = (props: IconProps) => <GiHamburgerMenu className='h-full w-full' {...props}/>
+export const HamburgerIcon = (props: IconProps) => <GiHamburgerMenu role='button' tabIndex={0} className='h-full w-full' aria-label='open mobile nav icon' {...props}/>
 
-export const CloseHamburgerIcon = (props: IconProps) => <AiOutlineClose className='h-full w-full' {...props}/>
+export const CloseHamburgerIcon = (props: IconProps) => <AiOutlineClose role='button' tabIndex={0} aria-checked='false' className='h-full w-full' {...props}/>

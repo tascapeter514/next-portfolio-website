@@ -1,4 +1,3 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import ButtonWithIcon from "./ButtonWithIcon"
 import Image from 'next/image'
 
@@ -12,9 +11,9 @@ const Hero = () => {
                     <h1 className='lineUp'>Hi, I'm Pete - a <strong>Javascript</strong> and <strong>Python</strong> fullstack developer.</h1>
                     <ButtonWithIcon />
                 </article>
-                <article className='w-full max-w-[500px] perspective-[1000px] flip'>
-                    <div className='relative overflow-hidden w-full aspect-square'>
-                        <Image src='/images/pt-portfolio-profile.jpeg' alt='portfolio-image' fill={true} />
+                <article className='flipIn w-full max-w-[500px] perspective-[1000px]'>
+                    <div className='relative overflow-hidden w-full aspect-square '>
+                        <Image src='/images/pt-portfolio-profile.jpeg' alt='portfolio-image' fill={true}  />
                     </div>
                 </article>
             </div>

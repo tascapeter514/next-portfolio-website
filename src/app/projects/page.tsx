@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator"
 import { Project } from "@/lib/types"
 import {projects} from 'public/data/client-data'
 import Link from "next/link"
@@ -15,14 +14,14 @@ const Projects = () => {
             </div>
             <ul aria-label='project-cards-container' className=' flex p-[2em] w-full max-w-[1000px] gap-3 max-lg:p-[1.5em] max-md:flex-col max-sm:p-[.75em]'>
                 {projects.map((project: Project) => (
-                    <li className='flip' key={project.label}>
+                    <li className='flipIn' key={project.label}>
                         <article className=' flex flex-col items-left gap-2 bg-[var(--card)] rounded-lg shadow transition hover:shadow-lg'>
                             <Link href={project.link}><Image className='w-full' src={project.imageSrc} alt='giving-focus'width={385} height={345}>
                                 </Image>
                             </Link>
                             <div className='p-[2em] max-lg:p-[1.5em] max-md:p-[1em]'>
-                                <h3 className='text-[24px] text-[var(--card-foreground)]'>{project.label}</h3>
-                                <p className='text-[var(--muted-foreground)] max-sm:text-base'>{project.text}</p>
+                                <h2 className='text-[24px] text-[var(--card-foreground)]'>{project.label}</h2>
+                                <p className='text-[var(--card-foreground)] max-sm:text-base'>{project.text}</p>
                             </div>
                         </article>
                     </li>

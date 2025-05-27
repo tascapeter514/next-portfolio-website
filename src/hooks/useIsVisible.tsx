@@ -1,4 +1,4 @@
-import {Reference, useEffect, useState, RefObject } from 'react'
+import { useEffect, useState, RefObject } from 'react'
 
 const useIsVisible = (ref: RefObject<HTMLElement | HTMLFormElement | null> ) => {
 

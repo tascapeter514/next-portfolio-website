@@ -1,8 +1,5 @@
 import Hero from '@/components/Hero'
 import DevIconGrid from '@/components/DevIconGrid'
-import path from 'path';
-import { capitalizeFirstLetter } from '@/utils/functions';
-import fs from 'fs'
 
 
 const HomePage = () => {
