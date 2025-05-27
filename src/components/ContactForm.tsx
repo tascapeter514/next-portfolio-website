@@ -1,5 +1,6 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm as useFormSpree, ValidationError } from '@formspree/react'
 import { useForm } from 'react-hook-form'
 import { useRef } from 'react'
 import useIsVisible from "@/hooks/useIsVisible"
@@ -45,8 +46,22 @@ const ContactForm = () => {
         }
     })
 
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const [state, handleSubmit] = useFormSpree("movdgely")
+    // const [state, handleSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORM)
+
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
         console.log(values)
+        const formData = new FormData()
+
+        Object.entries(values).forEach(([key, value]) => {
+            formData.append(key,value)
+        })
+
+        handleSubmit(formData)
+    }
+
+    if (state.succeeded) {
+        return <p>Thanks for your submission. Pete will get back to you as soon as possible</p>
     }
 
     return(
@@ -62,11 +77,11 @@ const ContactForm = () => {
                             name='firstName'
                             render={({ field }) => (
                                 <FormItem className='flex-1'>
-                                    <FormLabel >First Name</FormLabel>
+                                    <FormLabel>First Name</FormLabel>
                                     <FormControl>
                                         <Input data-test='first-name-field' placeholder='Enter your first name' {...field} className='w-full bg-white'/>
                                     </FormControl>
-                                    <FormMessage />
+                                    <ValidationError prefix='firstName' field='firstName' errors={state.errors} />
                                 </FormItem>
                             )}
                         />
@@ -79,7 +94,7 @@ const ContactForm = () => {
                                     <FormControl>
                                         <Input data-test='last-name-field' placeholder='Enter your last name' {...field} className='w-full h-auto bg-white'/>
                                     </FormControl>
-                                    <FormMessage />
+                                    <ValidationError prefix='lastName' field='lastName' errors={state.errors} />
                                 </FormItem>
                             )}
                         />
@@ -94,7 +109,7 @@ const ContactForm = () => {
                                 <FormControl>
                                     <Input data-test='email-field' placeholder='Enter your email address' {...field} className='w-full bg-white'/>
                                 </FormControl>
-                                <FormMessage />
+                                <ValidationError prefix='email' field='email' errors={state.errors} />
                             </FormItem>
                         )}
                                  />
@@ -107,7 +122,7 @@ const ContactForm = () => {
                                     <FormControl>
                                         <Input data-test='subject-field' placeholder='Enter a subject' {...field} className='w-full bg-white'/>
                                     </FormControl>
-                                    <FormMessage />
+                                    <ValidationError prefix='subject' field='subject' errors={state.errors} />
                                 </FormItem>
                             )}
                         />
@@ -121,11 +136,12 @@ const ContactForm = () => {
                             <FormControl>
                                 <Textarea data-test='message-field' placeholder='Send a message' {...field} className='w-full bg-white'/>
                             </FormControl>
-                            <FormMessage />
+                            <ValidationError prefix='message' field='message' errors={state.errors} />
                         </FormItem>
                     )}
                 />
                 <Button data-test='contact-button' type='submit' className='rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
+                <ValidationError errors={state.errors} />
                 </form>
             </Form>
         </section>
