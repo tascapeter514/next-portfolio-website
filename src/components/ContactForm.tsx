@@ -52,7 +52,7 @@ const ContactForm = () => {
     return(
         <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
             <h2 className='text-[36px]'>
-                Let's talk
+                Let&apos;s talk
             </h2>
             <Form {...form} >
                 <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
