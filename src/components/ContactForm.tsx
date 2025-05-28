@@ -33,7 +33,7 @@ const formSchema = z.object({
 const ContactForm = () => {
 
 
-    console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2)
+    console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
 
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
@@ -166,10 +166,10 @@ const ContactForm = () => {
                             </FormItem>
                         )}
                     />
-                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2 && (
+                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
                         <ReCAPTCHA
                         className='flex border-5 border-black-300 justify-center'
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                         ref={recaptchaRef}
                         />
                     )}
