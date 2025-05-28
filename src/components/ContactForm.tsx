@@ -83,7 +83,7 @@ const ContactForm = () => {
             console.log('form data:', formData)
             handleSubmit(formData)
 
-        } catch(e: any) {
+        } catch(e: unknown) {
             setreCAPTCHAError('Something went wrong. Please try again')
             console.error(e)
         }
