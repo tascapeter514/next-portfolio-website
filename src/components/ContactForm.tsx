@@ -164,10 +164,10 @@ const ContactForm = () => {
                             </FormItem>
                         )}
                     />
-                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2 && (
                         <ReCAPTCHA
                         className='flex border-5 border-black-300 justify-center'
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2}
                         ref={recaptchaRef}
                         />
                     )}
