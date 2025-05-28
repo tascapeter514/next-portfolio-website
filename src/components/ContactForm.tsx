@@ -33,6 +33,8 @@ const formSchema = z.object({
 const ContactForm = () => {
 
 
+    console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_V2)
+
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
 
