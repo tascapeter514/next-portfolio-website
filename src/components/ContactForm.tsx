@@ -17,8 +17,6 @@ import {
     // FormMessage
 } from '@/components/ui/form'
 import { Textarea } from "@/components/ui/textarea"
-// import Head from 'next/head'
-// import Script from 'next/script'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 
@@ -34,9 +32,6 @@ const formSchema = z.object({
 
 const ContactForm = () => {
 
-
-    console.log('environment variable:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
-    console.log('formspree key:', process.env.FORMSPREE_KEY)
 
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
@@ -63,7 +58,6 @@ const ContactForm = () => {
 
         try {
             setreCAPTCHAError(null)
-            console.log(values)
             const token = await recaptchaRef.current?.executeAsync();
             recaptchaRef.current?.reset()
 
@@ -90,7 +84,7 @@ const ContactForm = () => {
     }
 
     if (state.succeeded) {
-        return <p>Thanks for your submission. Pete will get back to you as soon as possible</p>
+        return <p className='text-lg'>Thanks for your submission. Pete will get back to you as soon as possible</p>
     }
 
     return(
