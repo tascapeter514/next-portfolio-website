@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm as useFormSpree, ValidationError } from '@formspree/react'
 import { useForm } from 'react-hook-form'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import useIsVisible from "@/hooks/useIsVisible"
 import { z } from 'zod'
 import { Input } from "@/components/ui/input"
@@ -17,8 +17,8 @@ import {
     // FormMessage
 } from '@/components/ui/form'
 import { Textarea } from "@/components/ui/textarea"
-import Head from 'next/head'
-import Script from 'next/script'
+// import Head from 'next/head'
+// import Script from 'next/script'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 
@@ -35,10 +35,13 @@ const formSchema = z.object({
 const ContactForm = () => {
 
 
-    // console.log('environment variable:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
+    console.log('environment variable:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
+    console.log('formspree key:', process.env.FORMSPREE_KEY)
 
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
+
+    const [reCAPTCHAError, setreCAPTCHAError] = useState<string | null>(null)
     const isVisible = useIsVisible(formRef);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -52,18 +55,38 @@ const ContactForm = () => {
         }
     })
 
-    const [state, handleSubmit] = useFormSpree("movdgely")
-    // const [state, handleSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORM)
+    if (!process.env.NEXT_PUBLIC_FORMSPREE_KEY) throw new Error('FORMSPREE_KEY environment variable is missing!')
+
+    const [state, handleSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORMSPREE_KEY)
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values)
-        const formData = new FormData()
 
-        Object.entries(values).forEach(([key, value]) => {
-            formData.append(key,value)
-        })
+        try {
+            setreCAPTCHAError(null)
+            console.log(values)
+            const token = await recaptchaRef.current?.executeAsync();
+            recaptchaRef.current?.reset()
 
-        
+            const formData = new FormData()
+
+            Object.entries(values).forEach(([key, value]) => {
+                formData.append(key,value)
+            })
+
+            if (!token) {
+                setreCAPTCHAError('An error occurred with your reCAPTCHA submission.')
+                return
+            }
+
+            formData.append('g-recaptcha-response', token)
+
+            console.log('form data:', formData)
+            handleSubmit(formData)
+
+        } catch(e: any) {
+            setreCAPTCHAError('Something went wrong. Please try again')
+            console.error(e)
+        }
     }
 
     if (state.succeeded) {
@@ -71,11 +94,8 @@ const ContactForm = () => {
     }
 
     return(
-        <>  
-            {/* <Head>
-                <Script src="https://www.google.com/recaptcha/api.js" async defer strategy='lazyOnload'></Script>
-            </Head> */}
-            <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
+
+        <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
             <h2 className='text-[36px]'>
                 Let&apos;s talk
             </h2>
@@ -109,73 +129,68 @@ const ContactForm = () => {
                             )}
                         />
                     </div>
-                 <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:max-w-[500px] max-sm:p-[.5em]">
-                     <FormField
-                        control={form.control}
-                        name='email'
-                        render={({ field }) => (
-                            <FormItem className='flex-1'>
-                                <FormLabel>Email Address</FormLabel>
-                                <FormControl>
-                                    <Input data-test='email-field' placeholder='Enter your email address' {...field} className='w-full bg-white'/>
-                                </FormControl>
-                                <ValidationError prefix='email' field='email' errors={state.errors} />
-                            </FormItem>
-                        )}
-                                 />
+                    <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:max-w-[500px] max-sm:p-[.5em]">
                         <FormField
                             control={form.control}
-                            name='subject'
+                            name='email'
                             render={({ field }) => (
                                 <FormItem className='flex-1'>
-                                    <FormLabel>Subject</FormLabel>
+                                    <FormLabel>Email Address</FormLabel>
                                     <FormControl>
-                                        <Input data-test='subject-field' placeholder='Enter a subject' {...field} className='w-full bg-white'/>
+                                        <Input data-test='email-field' placeholder='Enter your email address' {...field} className='w-full bg-white'/>
                                     </FormControl>
-                                    <ValidationError prefix='subject' field='subject' errors={state.errors} />
+                                    <ValidationError prefix='email' field='email' errors={state.errors} />
                                 </FormItem>
                             )}
                         />
-                 </div>
-                <FormField
-                    control={form.control}
-                    name='message'
-                    render={({ field }) => (
-                        <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                                <Textarea data-test='message-field' placeholder='Send a message' {...field} className='w-full bg-white'/>
-                            </FormControl>
-                            <ValidationError prefix='message' field='message' errors={state.errors} />
-                        </FormItem>
-                    )}
-                />
-                {
-                    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                            <FormField
+                                control={form.control}
+                                name='subject'
+                                render={({ field }) => (
+                                    <FormItem className='flex-1'>
+                                        <FormLabel>Subject</FormLabel>
+                                        <FormControl>
+                                            <Input data-test='subject-field' placeholder='Enter a subject' {...field} className='w-full bg-white'/>
+                                        </FormControl>
+                                        <ValidationError prefix='subject' field='subject' errors={state.errors} />
+                                    </FormItem>
+                                )}
+                            />
+                    </div>
+                    <FormField
+                        control={form.control}
+                        name='message'
+                        render={({ field }) => (
+                            <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
+                                <FormLabel>Message</FormLabel>
+                                <FormControl>
+                                    <Textarea data-test='message-field' placeholder='Send a message' {...field} className='w-full bg-white'/>
+                                </FormControl>
+                                <ValidationError prefix='message' field='message' errors={state.errors} />
+                            </FormItem>
+                        )}
+                    />
+                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
                         <ReCAPTCHA
                         className='flex border-5 border-black-300 justify-center'
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                         ref={recaptchaRef}
-                    />
-                    )
-                    
-                }
-               
-
-                <Button data-test='contact-button' type='submit' className='cursor-pointer rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'
+                        />
+                    )}
+                <Button 
+                    data-test='contact-button' 
+                    type='submit' 
+                    className='cursor-pointer rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'
                 >
                     Submit
                 </Button>
-
+                {reCAPTCHAError && (
+                    <p className='text-red-500'>{reCAPTCHAError}</p>
+                )}
                 <ValidationError errors={state.errors} />
                 </form>
             </Form>
         </section>
-    </>
-        
-
-    )
-
-}
+    )}
 
 export default ContactForm
