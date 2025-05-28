@@ -17,7 +17,9 @@ import {
     // FormMessage
 } from '@/components/ui/form'
 import { Textarea } from "@/components/ui/textarea"
-
+import Head from 'next/head'
+import Script from 'next/script'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 
 const formSchema = z.object({
@@ -32,7 +34,11 @@ const formSchema = z.object({
 
 const ContactForm = () => {
 
+
+    // console.log('environment variable:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
+
     const formRef = useRef<HTMLFormElement>(null)
+    const recaptchaRef = useRef<ReCAPTCHA>(null)
     const isVisible = useIsVisible(formRef);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -49,28 +55,32 @@ const ContactForm = () => {
     const [state, handleSubmit] = useFormSpree("movdgely")
     // const [state, handleSubmit] = useFormSpree(process.env.NEXT_PUBLIC_FORM)
 
-    // const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    //     console.log(values)
-    //     const formData = new FormData()
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log(values)
+        const formData = new FormData()
 
-    //     Object.entries(values).forEach(([key, value]) => {
-    //         formData.append(key,value)
-    //     })
+        Object.entries(values).forEach(([key, value]) => {
+            formData.append(key,value)
+        })
 
         
-    // }
+    }
 
     if (state.succeeded) {
         return <p>Thanks for your submission. Pete will get back to you as soon as possible</p>
     }
 
     return(
-        <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
+        <>  
+            {/* <Head>
+                <Script src="https://www.google.com/recaptcha/api.js" async defer strategy='lazyOnload'></Script>
+            </Head> */}
+            <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
             <h2 className='text-[36px]'>
                 Let&apos;s talk
             </h2>
             <Form {...form} >
-                <form data-test='contact-form' onSubmit={handleSubmit} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
+                <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
                     <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:p-[.5em]">
                         <FormField
                             control={form.control}
@@ -140,11 +150,29 @@ const ContactForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button data-test='contact-button' type='submit' className='cursor-pointer rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'>Submit</Button>
+                {
+                    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                        <ReCAPTCHA
+                        className='flex border-5 border-black-300 justify-center'
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        ref={recaptchaRef}
+                    />
+                    )
+                    
+                }
+               
+
+                <Button data-test='contact-button' type='submit' className='cursor-pointer rounded-xl bg-[var(--primary)] text-white flex-1 w-full max-w-[400px] max-sm:max-w-[250px]'
+                >
+                    Submit
+                </Button>
+
                 <ValidationError errors={state.errors} />
                 </form>
             </Form>
         </section>
+    </>
+        
 
     )
 
