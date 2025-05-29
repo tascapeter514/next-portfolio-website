@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 const ContactForm = () => {
 
-
+    console.log('environment variables:', process.env)
     console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_TEST_KEY)
     console.log('form spree:', process.env.NEXT_PUBLIC_FORMSPREE_KEY)
 
