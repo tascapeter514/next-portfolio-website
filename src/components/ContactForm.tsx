@@ -34,6 +34,7 @@ const ContactForm = () => {
 
 
     console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
+    console.log('form spree:', process.env.NEXT_PUBLIC_FORMSPREE_KEY)
 
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
