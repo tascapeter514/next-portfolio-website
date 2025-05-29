@@ -35,6 +35,7 @@ const ContactForm = () => {
 
     console.log('reCAPTCHA:', process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
     console.log('form spree:', process.env.NEXT_PUBLIC_FORMSPREE_KEY)
+    console.log('form spree:', process.env.NEXT_PUBLIC_)
 
     const formRef = useRef<HTMLFormElement>(null)
     const recaptchaRef = useRef<ReCAPTCHA>(null)
@@ -167,10 +168,10 @@ const ContactForm = () => {
                             </FormItem>
                         )}
                     />
-                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                    {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_TEST_KEY && (
                         <ReCAPTCHA
                         className='flex border-5 border-black-300 justify-center'
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_TEST_KEY}
                         ref={recaptchaRef}
                         />
                     )}
