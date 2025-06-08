@@ -48,22 +48,19 @@ export const projects = [
 export const cards = [
     {
         label: 'Frontend',
-        // src: '/about-icons/code-solid.svg',
         Icon: BracketsIcon,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
+        text: "Whether you need robust state management or smooth, user-friendly layouts, every aspect of my frontend work is crafted to deliver seamless, accessible experiences that boost user engagement and fuel your business’s long-term growth."
     
     },
     {
         label: 'Backend',
         Icon: MicrochipIcon,
-        // src: '/about-icons/microchip-solid.svg',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
+        text: 'By translating complex business requirements into scalable architectures, I deliver performance-optimized APIs that ensure efficient data management, reliable third-party integrations, and robust workflows for your project goals.'
     },
     {
         label: 'Data Analytics',
         Icon: DatabaseIcon,
-        // src: '/about-icons/database-solid.svg',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem amet aperiam perferendis porro assumenda quia ullam ratione, praesentium quae esse rerum id magni doloremque doloribus recusandae veniam asperiores. Molestias.'
+        text: 'Leveraging data-driven insights and clear, compelling visualizations, I transform complex datasets into actionable intelligence that empowers you to make informed business decisions and uncover growth opportunities.'
 
     }
 ]
