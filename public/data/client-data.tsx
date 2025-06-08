@@ -49,7 +49,7 @@ export const cards = [
     {
         label: 'Frontend',
         Icon: BracketsIcon,
-        text: "Whether you need robust state management or smooth, user-friendly layouts, every aspect of my frontend work is crafted to deliver seamless, accessible experiences that boost user engagement and fuel your business’s long-term growth."
+        text: "Whether you need robust state management or smooth, user-friendly layouts, every aspect of my frontend work is crafted to deliver seamless, accessible experiences that boost user engagement and fuel your business's long-term growth."
     
     },
     {

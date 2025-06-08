@@ -32,7 +32,7 @@ const About = () => {
                         ))}
                     </ul>
                     {/* Lower Text */}
-                    <p className='lineUp'>As a generalist, I thrive at the intersection of disciplines, with my technical skill set complementing my ability to bridge communication gaps between developers, designers, and product teams. If you’re looking for a developer who can drive projects forward through strategic problem-solving and clear communication, let’s connect.</p>
+                    <p className='lineUp'>As a generalist, I thrive at the intersection of disciplines, with my technical skill set complementing my ability to bridge communication gaps between developers, designers, and product teams. If you&apos;re looking for a developer who can drive projects forward through strategic problem-solving and clear communication, let&apos;s connect.</p>
                 </article>
                 {/* Image Container */}
                 <article className='w-full h-fit max-w-[500px] border-1 border-black-300 max-md:mx-auto'>
