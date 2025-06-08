@@ -12,10 +12,10 @@ const Projects = () => {
             <div className='flex flex-col items-center p-[1em]'>
                 <h1 className='text-[40px] lineUp'>Projects</h1>
             </div>
-            <ul aria-label='project-cards-container' className=' flex p-[2em] w-full max-w-[1000px] gap-3 max-lg:p-[1.5em] max-md:flex-col max-sm:p-[.75em]'>
+            <ul aria-label='project-cards-container' className='flex p-[2em] w-full max-w-[1000px] gap-3 max-lg:p-[1.5em] max-md:flex-col max-sm:p-[.75em]'>
                 {projects.map((project: Project) => (
-                    <li className='flipIn' key={project.label}>
-                        <article className=' flex flex-col items-left gap-2 bg-[var(--card)] rounded-lg shadow transition hover:shadow-lg'>
+                    <li className='flipIn flex-1' key={project.label}>
+                        <article className='h-full flex flex-col items-left gap-2 bg-[var(--card)] rounded-lg shadow transition hover:shadow-lg'>
                             <Link href={project.link}><Image className='w-full' src={project.imageSrc} alt='giving-focus'width={385} height={345}>
                                 </Image>
                             </Link>

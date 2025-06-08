@@ -31,14 +31,14 @@ export const projects = [
         link: 'https://bookchatapp.onrender.com/search',
         imageSrc: '/images/bookchat-portfolio.png',
         label: 'Bookchat',
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate esse expedita itaque, veniam tenetur eligendi iusto? Quisquam fugit doloribus totam excepturi qui nulla hic error explicabo numquam odit! Fugiat, eum!"
+        text: "A fullstack social app built to spark community through a shared love of books. Inspired by my time teaching literature at UCLA and hosting virtual book clubs during the pandemic, Bookchat makes it simple to connect, organize, and read together—across time zones, backgrounds, and genres."
 
     },
     {
         link: 'https://givingfocus.netlify.app/',
         imageSrc: '/images/giving-focus-portfolio.png',
         label: 'Giving Focus',
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate esse expedita itaque, veniam tenetur eligendi iusto? Quisquam fugit doloribus totam excepturi qui nulla hic error explicabo numquam odit! Fugiat, eum!"
+        text: "Built a fully responsive static site using Create React App, designing the layout and writing all CSS from scratch—no templates involved. Developed a lightweight testimonial carousel and mobile-first navigation to enhance engagement and accessibility across devices."
 
     }
 ]
