@@ -15,7 +15,7 @@ const About = () => {
                     {/* Upper Text */}
                     <p className='text-lg font-medium lineUp'>Before tech, I studied and taught English literature at UCLA, then worked as a copywriter and brand strategist. That path—rooted in language, analysis, and communication—shaped how I approach software development today: with clarity, scalability, and a focus on the human side of technology.</p>
 
-                    <p>Now, as a fullstack developer, I build clean, modular applications using tools like React, TypeScript, Django, and Node. I'm skilled at translating complex business goals into intuitive user experiences and equally comfortable collaborating across teams or working independently to deliver high-impact, maintainable solutions.</p>
+                    <p>Now, as a fullstack developer, I build clean, modular applications using tools like React, TypeScript, Django, and Node. I&apos;m skilled at translating complex business goals into intuitive user experiences and equally comfortable collaborating across teams or working independently to deliver high-impact, maintainable solutions.</p>
                     {/* Card Container */}
                     <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:max-w-3xl gap-4'>
                         {cards.map((card: Card) => (
