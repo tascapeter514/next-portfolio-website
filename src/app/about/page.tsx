@@ -37,7 +37,7 @@ const About = () => {
                 {/* Image Container */}
                 <article className='w-full h-fit max-w-[500px] border-1 border-black-300 max-md:mx-auto'>
                     <div className='relative overflow-hidden aspect-square flipIn'>
-                        <Image src='/images/pt-portfolio-profile.jpeg' fill alt='about-me-pic' />
+                        <Image src='/images/about-pic.jpg' fill alt='about-me-pic' className='object-cover object-top' />
                     </div>
                 </article>
             </div>
