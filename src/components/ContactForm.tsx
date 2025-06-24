@@ -109,7 +109,7 @@ const ContactForm = () => {
                 Let&apos;s talk
             </h2>
             <Form {...form} >
-                <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em]' >
+                <form data-test='contact-form' onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3 border-1 border-[var(--border)]-300 w-full max-w-[900px] max-lg:max-w-[700px] max-md:max-w-[600px] max-sm:max-w-[500px] p-[2em] bg-[var(--card)] items-center max-sm:p-[.5em] max-sm:gap-1' >
                     <div className="flex flex-row gap-5 w-full justify-center p-[1em] max-sm:flex-col max-sm:p-[.5em]">
                         <FormField
                             control={form.control}
@@ -170,8 +170,8 @@ const ContactForm = () => {
                         control={form.control}
                         name='message'
                         render={({ field }) => (
-                            <FormItem className='flex-1 w-full p-[1em] h-[500px]'>
-                                <FormLabel>Message</FormLabel>
+                            <FormItem className='flex-1 w-full px-[1em] pt-[1em] max-sm:pt-0'>
+                                <FormLabel className='mb-1'>Message</FormLabel>
                                 <FormControl>
                                     <Textarea data-test='message-field' placeholder='Send a message' {...field} className='w-full bg-white'/>
                                 </FormControl>
