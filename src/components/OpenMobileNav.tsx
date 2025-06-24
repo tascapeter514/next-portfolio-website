@@ -15,7 +15,7 @@ const OpenMobileNav = ({mobileNav, navDispatch, children}: Props) => {
 
     return(
             <button 
-                className={`md:hidden max-md:absolute max-md:top-[10px] max-md:right-[10px] max-md:bg-transparent max-md:cursor-pointer max-md:border-0 max-md:w-[35px] ${mobileNav.open ? 'hidden' : ''}`} 
+                className={`md:hidden max-md:absolute max-md:top-[20px] max-md:right-[10px] max-md:bg-transparent max-md:cursor-pointer max-md:border-0 max-md:w-[35px] ${mobileNav.open ? 'hidden' : ''}`} 
                 onClick={() => navDispatch({type: 'OPEN_MOBILE_NAV', payload: true})}
             >
                 {children}

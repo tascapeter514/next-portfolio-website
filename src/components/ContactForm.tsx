@@ -4,6 +4,7 @@ import { useForm as useFormSpree, ValidationError } from '@formspree/react'
 import { useForm } from 'react-hook-form'
 import { useRef, useState } from 'react'
 import useIsVisible from "@/hooks/useIsVisible"
+import useMediaQuery from "@/hooks/useMediaQuery"
 import { z } from 'zod'
 import { Input } from "@/components/ui/input"
 import { Button } from "./ui/button"
@@ -42,6 +43,7 @@ const ContactForm = () => {
 
     const [reCAPTCHAError, setreCAPTCHAError] = useState<string | null>(null)
     const isVisible = useIsVisible(formRef);
+    const isMediumOrGreater = useMediaQuery('(min-width: 768px)')
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -91,9 +93,18 @@ const ContactForm = () => {
         return <p className='text-lg'>Thanks for your submission. Pete will get back to you as soon as possible</p>
     }
 
+    console.log('is medium or greater:', isMediumOrGreater)
+
     return(
 
-        <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${isVisible ? 'scroll-lineUp' : 'opacity-0'}`}>
+        <section ref={formRef}  className={`w-full flex flex-col justify-center items-center gap-3 max-sm:p-[1.5em] ${
+            isVisible 
+                ? isMediumOrGreater
+                ? 'scroll-lineUp' 
+                : 'opacity-100'
+            : 'opacity-0'
+            
+        }`}>
             <h2 className='text-[36px]'>
                 Let&apos;s talk
             </h2>
