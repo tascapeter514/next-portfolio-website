@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { devIcons } from "public/data/client-data"
 import { DevIcon } from "@/lib/types"
-import { Separator } from "@/components/ui/separator"
+// import { Separator } from "@/components/ui/separator"
 
 
 
