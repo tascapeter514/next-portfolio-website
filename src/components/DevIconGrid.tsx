@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { devIcons } from "public/data/client-data"
 import { DevIcon } from "@/lib/types"
-// import { Separator } from "@/components/ui/separator"
 
 
 
@@ -10,11 +9,11 @@ import { DevIcon } from "@/lib/types"
 const DevIconGrid = () => {
 
     return(
-        <section aria-label='dev-icon-grid' className='bg-[var(--secondary)] w-full'>
+        <section aria-label='dev-icon-grid' className='bg-[var(--secondary)] w-full mt-3'>
             <article className=' flex flex-col w-full max-w-[1200px] m-auto h-fill items-center'>
                 <h1 className='text-[40px] max-w-[fit-content]'>
                     Technologies
-                    {/* <Separator className='border-1 border-black-300'/> */}
+
                 </h1>
                 <ul className='w-full grid justify-items-center [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[2em] max-sm:gap-11 max-sm:[grid-template-columns:repeat(auto-fit,minmax(70px,1fr))]'>
                     {devIcons.map((icon: DevIcon) => (
