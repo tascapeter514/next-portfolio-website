@@ -16,13 +16,13 @@ const DevIconGrid = () => {
                     Technologies
                     {/* <Separator className='border-1 border-black-300'/> */}
                 </h1>
-                <ul className='w-full grid justify-items-center [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[2em] max-sm:gap-7'>
+                <ul className='w-full grid justify-items-center [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))] gap-6 p-[2em] max-sm:gap-11 max-sm:[grid-template-columns:repeat(auto-fit,minmax(70px,1fr))]'>
                     {devIcons.map((icon: DevIcon) => (
                         <li key={icon.label} 
-                            className='aspect-square  h-[100px] flex flex-col items-center max-sm:border-1 max-sm:border-white-700'
+                            className='aspect-square h-[100px] flex flex-col text-center max-[375px]:h-[80px]'
                         >
                             <Image src={icon.src} width={100} height={100} layout='responsive' alt='javascript-icon'/>
-                                <span>{icon.label}</span>
+                                <span className='w-full'>{icon.label}</span>
                                 
                         </li>
                 

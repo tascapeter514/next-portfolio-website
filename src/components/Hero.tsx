@@ -12,7 +12,7 @@ const Hero = () => {
                     <h2 className='text-2xl/10'>I deliver software solutions by transcending software silos</h2>
                     <ButtonWithIcon />
                 </article>
-                <article className='flipIn w-full max-w-[500px] perspective-[1000px]'>
+                <article className='flipIn w-full max-w-[500px] perspective-[1000px] max-sm:max-w-[400px]'>
                     <div className='relative overflow-hidden w-full aspect-square '>
                         <Image src='/images/pt-portfolio-profile.jpeg' alt='portfolio-image' fill={true}  />
                     </div>

@@ -181,7 +181,6 @@ const ContactForm = () => {
                     />
                     {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
                         <ReCAPTCHA
-                        className='flex border-5 border-black-300 justify-center'
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                         ref={recaptchaRef}
                         />
