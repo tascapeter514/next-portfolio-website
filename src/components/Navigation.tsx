@@ -48,7 +48,7 @@ const Navigation = () => {
           >
             <CloseHamburgerIcon />
           </CloseMobileNav>
-          <aside id='mobile-navigation' aria-labelledby='mobile-nav-label' className={`${mobileNav.open && !mobileNav.isExiting ? 'absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : `${mobileNav.isExiting && mobileNav.open ? 'absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : 'hidden'}`}`}
+          <aside id='mobile-navigation' aria-labelledby='mobile-nav-label' className={`${mobileNav.open && !mobileNav.isExiting ? 'absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-xl' : `${mobileNav.isExiting && mobileNav.open ? 'absolute right-[30px] top-[45px] w-full max-w-[200px] z-9999 h-fit bg-[var(--muted-foreground)] p-[3em] gap-1 border-1 border-black-300 text-3xl' : 'hidden'}`}`}
           >
             <h2 id="mobile-nav-label" className="sr-only">Mobile Navigation</h2>
             <ul className='p-[5%] flex flex-col gap-[1.25rem] items-center' onClick={() => mobileNav.open = false}>
